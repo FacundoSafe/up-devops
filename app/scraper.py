@@ -46,7 +46,6 @@ def check_bna_status():
 
 
 def fetch_cotizaciones():
-    # BNA uses a self-signed cert in its chain
     response = requests.get(BNA_URL, headers=HEADERS, timeout=10, verify=False)
     response.raise_for_status()
     soup = BeautifulSoup(response.text, "html.parser")
